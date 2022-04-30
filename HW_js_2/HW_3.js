@@ -60,5 +60,8 @@ for (const key in enterprises) {
         quant = quant + enterprises[key].departments[k].employees_count
     }
     console.log(enterprises[key].name + " (" + quant + " сотрудников)")
-    console.log(enterprises[key].departments)
+   
+    enterprises[key].departments.forEach(function(item){
+      console.log(item.name + " (" + item.employees_count + " сотрудников)")})
+      console.log()
 }  
