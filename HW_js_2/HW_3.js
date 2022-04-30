@@ -64,4 +64,6 @@ for (const key in enterprises) {
     enterprises[key].departments.forEach(function(item){
       console.log(item.name + " (" + item.employees_count + " сотрудников)")})
       console.log()
+      ////////////////////////////////////////////////////
+      ////////////////////////////////////////////////////
 }  
