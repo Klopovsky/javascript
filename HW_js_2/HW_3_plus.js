@@ -134,4 +134,15 @@ const editDepartment = function(department_id, department_newName){
 editDepartment(12, "Edited department");
 console.log(enterprises[3]);
 /////////////////////////////////////////////////////////////////////////////////////////
-//3.7//
+//3.7
+const deleteEnterprise = function(enterprise_id){
+  for (const key in enterprises){
+    if (enterprises[key].id == enterprise_id){
+      delete enterprises[key]
+    }
+  }
+}
+deleteEnterprise(11);
+console.log(enterprises);
+//////////////////////////////////////////////////////////////////////////////////////////
+//3.8
