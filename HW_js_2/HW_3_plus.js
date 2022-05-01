@@ -68,6 +68,7 @@ const enterprises = [
 //       ////////////////////////////////////////////////////
    
 // }  
+//3.2
 const getEnterpisesName = function(param){
     for (const key in enterprises){
         if (enterprises[key].id == param){ return enterprises[key].name}
@@ -81,16 +82,30 @@ console.log(getEnterpisesName(4));
 console.log(getEnterpisesName(5));
 console.log(getEnterpisesName("Отдел аналитики"))
 /////////////////////////////////////////////////////////////////////////////////////////
-
-const last_id = function(){
+//3.3
+const last_id = function(){  //find last id in object
     if (enterprises.at(-1).departments.length == 0){ return enterprises.at(-1).id}
     else {return enterprises.at(-1).departments.at(-1).id}
 }
 
 
 const addEnterprise = function(new_enterpise){
-    enterprises.push([last_id() + 1, new_enterpise,[]])
+    enterprises.push({id: last_id() + 1,name: new_enterpise, departments: []})
 }
 
 addEnterprise("neweee");
 console.log(enterprises.at(-1));
+console.log(getEnterpisesName(11));
+/////////////////////////////////////////////////////////////////////////////////////////
+//3.4
+const addDepartment = function(enterprise_id, department_name){
+  for (const key in enterprises){
+    if (enterprises[key].id == enterprise_id){
+      enterprises[key].departments.push({id: last_id() + 1, name: department_name, employees_count: 0 })
+    }
+  }
+}
+addDepartment(11, "New department");
+console.log(enterprises[3]);
+//////////////////////////////////////////////////////////////////////////////////////////
+//3.5
