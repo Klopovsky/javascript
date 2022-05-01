@@ -119,3 +119,19 @@ const editEnterprise = function(enterprise_id, enterprise_newName){
 }
 editEnterprise(11,"Edited enterprise");
 console.log(enterprises[3]);
+//////////////////////////////////////////////////////////////////////////////////////////
+//3.6
+
+const editDepartment = function(department_id, department_newName){
+  for (const key in enterprises){
+    for (const dep_key in enterprises[key].departments){
+      if (enterprises[key].departments[dep_key].id == department_id){
+        enterprises[key].departments[dep_key].name = department_newName
+      }
+    }
+  }
+}
+editDepartment(12, "Edited department");
+console.log(enterprises[3]);
+/////////////////////////////////////////////////////////////////////////////////////////
+//3.7
