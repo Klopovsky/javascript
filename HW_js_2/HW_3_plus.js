@@ -109,3 +109,13 @@ addDepartment(11, "New department");
 console.log(enterprises[3]);
 //////////////////////////////////////////////////////////////////////////////////////////
 //3.5
+
+const editEnterprise = function(enterprise_id, enterprise_newName){
+  for (const key in enterprises){
+    if (enterprises[key].id == enterprise_id){
+      enterprises[key].name = enterprise_newName
+    }
+  }
+}
+editEnterprise(11,"Edited enterprise");
+console.log(enterprises[3]);
