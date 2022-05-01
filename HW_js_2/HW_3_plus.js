@@ -162,3 +162,8 @@ const deleteDepartment = function(department_id){
 deleteDepartment(10);
 deleteDepartment(8);
 console.log(enterprises[2]);
+//////////////////////////////////////////////////////////////////////////////////////////
+//3.9
+const moveEmployees = function(department_id_donor, department_id_recip){
+  
+}
