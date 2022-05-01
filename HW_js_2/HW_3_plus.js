@@ -146,3 +146,19 @@ deleteEnterprise(11);
 console.log(enterprises);
 //////////////////////////////////////////////////////////////////////////////////////////
 //3.8
+
+const deleteDepartment = function(department_id){
+  for (const key in enterprises){
+    for (const dep_key in enterprises[key].departments){
+      if (enterprises[key].departments[dep_key].id == department_id){
+        if (enterprises[key].departments[dep_key].employees_count <= 0){
+        delete enterprises[key].departments[dep_key]
+        }else{console.log("Can not delete. This department have employees")}
+      }
+    }
+  }
+}
+
+deleteDepartment(10);
+deleteDepartment(8);
+console.log(enterprises[2]);
