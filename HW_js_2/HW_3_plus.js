@@ -165,5 +165,23 @@ console.log(enterprises[2]);
 //////////////////////////////////////////////////////////////////////////////////////////
 //3.9
 const moveEmployees = function(department_id_donor, department_id_recip){
-  
+  let empl;
+  for (const key in enterprises) {
+    for (const k in enterprises[key].departments){
+      if (enterprises[key].departments[k].id == department_id_donor){
+        empl = enterprises[key].departments[k].employees_count;
+        enterprises[key].departments[k].employees_count = 0;
+      }
+    }
+  }
+  for (const key in enterprises) {
+    for (const k in enterprises[key].departments){
+      if (enterprises[key].departments[k].id == department_id_recip){
+        enterprises[key].departments[k].employees_count += empl;
+      }
+    }
+  }
 }
+console.log(enterprises[0]);
+moveEmployees(3,2);
+console.log(enterprises[0]);
