@@ -82,15 +82,15 @@ const company = [
     
     function getProp(o) {
         for(var prop in o) {
-            if((typeof(o[prop]) === 'object')&&(o[prop] != null)&&("children" in o[prop])) {
+            if((typeof(o[prop]) === "object")&&(o[prop] != null)&&("children" in o[prop])) {
                 str += "--";
                 getProp(o[prop]);
                 
-            } else {
-               
-                console.log(str ,o[prop]); str = " ";
+            } else 
+               if (typeof(o[prop]) === "string"){
+                console.log(str ,o[prop]);str = " ";}
             }
-        }
+        
     }
  } 
  show_object(company);
